@@ -81,6 +81,7 @@ checkboxGenreOthers.forEach(e => {
 resetInputs();
 save();
 restart();
+replayCurrentSong();
 document.addEventListener('keydown', keyDownHandler);
 document.addEventListener('keyup', keyUpHandler);
 
