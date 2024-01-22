@@ -24,7 +24,7 @@ const buttonClass = 'col-6 col-md-4 col-lg-3 mb-3 my-auto';
 const firstRow = [['Start Time', 'startTime', '0', '600'], ['Duration', 'duration', '0', '30']];
 const secondRow = [[['primary dropdown-toggle', '', 'm', 'pen', '<span id="mode-text">Change <u>m</u>ode</span>'], 'mode', [['0', 'Artist & Title'], ['1', 'Only Artist'], ['2', 'Only Title']]], ['<u>D</u>elete song after round', 'del', 'd']];
 const thirdRow = [['Guess Artist', 'guessArtist'], ['Guess Title', 'guessTitle']];
-const fourthRow = [['success', 'if(!locked)window.guess()', 'g', 'search', '<u>G</u>uess'], ['danger', 'if(!locked)giveUp()', 'u', 'times', 'Give <u>U</u>p'], ['info', 'restart()', 'e', 'sync', 'R<u>e</u>start'], ['info', '', 's', 'cog', '<u>S</u>ettings']];
+const fourthRow = [['light', 'if(!locked)replaySong()', 'r', 'play', '<u>R</u>eplay'], ['success', 'if(!locked)window.guess()', 'g', 'search', '<u>G</u>uess'], ['danger', 'if(!locked)giveUp()', 'u', 'times', 'Give <u>U</u>p'], ['info', 'restart()', 'e', 'sync', 'R<u>e</u>start'], ['info', '', 's', 'cog', '<u>S</u>ettings']];
 form.appendChild(createNumberRow(rowClass, colClass, firstRow));
 form.appendChild(createRow(rowClass, [createDropdownCol(colClass, ...secondRow[0]), createCheckboxCol(colClass + ' my-auto', ...secondRow[1])]));
 form.appendChild(createTextRow(rowClass, colClass, thirdRow));
@@ -184,48 +184,31 @@ window.replaySong = function () {
   replayCurrentSong();
 };
 
-function replayCurrentSong () {
-  // Stop the current timeout (if any)
+window.clearAndReplay = function () {
   window.clearTimeout(timeout);
-
-  // Remove the existing iframe
   if (iframe) {
     iframe.remove();
   }
+  replayCurrentSong();
+};
 
-  // Create a new iframe for the current song with autoplay
+function replayCurrentSong () {
+  window.clearTimeout(timeout);
+  if (iframe) {
+    iframe.remove();
+  }
   iframe = document.createElement('iframe');
   iframe.width = 1;
   iframe.height = 1;
   iframe.src = `https://www.youtube.com/embed/${song[2]}?controls=0&start=${startTime}&autoplay=1`;
   iframe.allow = 'autoplay';
-
-  // Append the new iframe to the container
   document.getElementsByClassName('container')[0].appendChild(iframe);
-
-  // Set a new timeout to remove the iframe after the song duration
   timeout = window.setTimeout(function () {
     iframe.remove();
   }, duration * 1000);
-
-  // Clear the text and unlock the game
   document.getElementById('text').innerHTML = '';
   window.locked = false;
 }
-
-// Function to clear the current iframe and replay the song
-window.clearAndReplay = function () {
-  // Stop the current timeout (if any)
-  window.clearTimeout(timeout);
-
-  // Remove the existing iframe
-  if (iframe) {
-    iframe.remove();
-  }
-
-  // Call the function to replay the song
-  replayCurrentSong();
-};
 
 function check (id, guess) {
   const input = document.getElementById(id);
