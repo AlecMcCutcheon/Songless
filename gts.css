@@ -7,24 +7,29 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100vh; /* Ensure full height */
+    margin: 0; /* Remove default body margin */
 }
 
 header {
     text-align: center;
 }
 
+.Header-Text-P1,
+.Header-Text-P2 {
+    display: inline; /* Make sure both headers are inline */
+}
+
 .Header-Text-P1 {
     color: #ffffff;
     font-size: 2em; /* Adjust the font size as needed */
     margin: 0; /* Remove default margin */
-    display: inline; /* Make sure both headers are inline */
 }
 
 .Header-Text-P2 {
     color: #c5c5c5;
     font-size: 2em; /* Adjust the font size as needed */
     margin: 0; /* Remove default margin */
-    display: inline; /* Make sure both headers are inline */
 }
 
 .Header-Divider {
