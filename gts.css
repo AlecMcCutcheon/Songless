@@ -80,17 +80,14 @@ input[type="number"] {
 }
 
 .btn-primary:hover,
-.dropdown-toggle:hover {
-    background-color: #3e8f14; /* Darker shade of green on hover */
-    border-color: #3e8f14;
-    color: #fff; /* Set text color to white on hover */
-}
-
+.dropdown-toggle:hover,
 .btn-primary:active,
-.dropdown-toggle:active {
-    background-color: #3e8f14; /* Keep the same shade of green when active */
+.dropdown-toggle:active,
+.btn-primary:focus,
+.dropdown-toggle:focus {
+    background-color: #3e8f14; /* Darker shade of green for active and focus states */
     border-color: #3e8f14;
-    color: #fff; /* Set text color to white when active */
+    color: #fff; /* Set text color to white for active and focus states */
 }
 
 .alert {
