@@ -231,6 +231,6 @@ function end (className, text) {
   createAlert('info', 'Restart the game!');
 }
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
   replayCurrentSong();
 });
