@@ -29,7 +29,7 @@ form.appendChild(createNumberRow(rowClass, colClass, firstRow));
 form.appendChild(createRow(rowClass, [createDropdownCol(colClass, ...secondRow[0]), createCheckboxCol(colClass + ' my-auto', ...secondRow[1])]));
 form.appendChild(createTextRow(rowClass, colClass, thirdRow));
 form.appendChild(createRow(rowClass, [createButtonGroupRow(buttonClass, 'btn-group', fourthRow)]));
-createModalButton(form.children[3].children[0].children[0], 3);
+createModalButton(form.children[4].children[0].children[0], 4);
 let minYear = +songs[0][3];
 let maxYear = +songs[0][3];
 const genres = [];
