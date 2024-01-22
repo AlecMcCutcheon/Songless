@@ -180,6 +180,53 @@ function restart () {
   window.locked = false;
 }
 
+window.replaySong = function () {
+  replayCurrentSong();
+};
+
+function replayCurrentSong() {
+  // Stop the current timeout (if any)
+  window.clearTimeout(timeout);
+
+  // Remove the existing iframe
+  if (iframe) {
+    iframe.remove();
+  }
+
+  // Create a new iframe for the current song with autoplay
+  iframe = document.createElement('iframe');
+  iframe.width = 1;
+  iframe.height = 1;
+  iframe.src = `https://www.youtube.com/embed/${song[2]}?controls=0&start=${startTime}&autoplay=1`;
+  iframe.allow = 'autoplay';
+
+  // Append the new iframe to the container
+  document.getElementsByClassName('container')[0].appendChild(iframe);
+
+  // Set a new timeout to remove the iframe after the song duration
+  timeout = window.setTimeout(function () {
+    iframe.remove();
+  }, duration * 1000);
+
+  // Clear the text and unlock the game
+  document.getElementById('text').innerHTML = '';
+  window.locked = false;
+}
+
+// Function to clear the current iframe and replay the song
+window.clearAndReplay = function () {
+  // Stop the current timeout (if any)
+  window.clearTimeout(timeout);
+
+  // Remove the existing iframe
+  if (iframe) {
+    iframe.remove();
+  }
+
+  // Call the function to replay the song
+  replayCurrentSong();
+};
+
 function check (id, guess) {
   const input = document.getElementById(id);
   const inputLowercase = input.value.toLowerCase();
