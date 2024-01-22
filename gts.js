@@ -170,7 +170,7 @@ function restart () {
   iframe = document.createElement('iframe');
   iframe.width = 1;
   iframe.height = 1;
-  iframe.src = `https://cors-anywhere-proxy.mccutcheon.workers.dev/?https://www.youtube.com/embed/${song[2]}?controls=0&start=${startTime}&autoplay=1`;
+  iframe.src = `https://www.youtube.com/embed/${song[2]}?controls=0&start=${startTime}&autoplay=1`;
   iframe.allow = 'autoplay';
   timeout = window.setTimeout(function () {
     iframe.remove();
