@@ -29,10 +29,6 @@ body {
 
 .container {
     margin-top: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
 .form-label {
@@ -75,6 +71,12 @@ input[type="number"] {
     border-color: #3e8f14;
 }
 
+.btn-primary:active,
+.dropdown-toggle:active {
+    background-color: #3e8f14;
+    border-color: #3e8f14;
+}
+
 .modal-content {
     background-color: #343a40;
     color: #fff;
@@ -109,4 +111,9 @@ input[type="number"] {
 .form-check-input {
     background-color: #55b725;
     border-color: #55b725;
+}
+
+.form-check-input:checked {
+    background-color: #3e8f14;
+    border-color: #3e8f14;
 }
