@@ -184,7 +184,7 @@ window.replaySong = function () {
   replayCurrentSong();
 };
 
-function replayCurrentSong() {
+function replayCurrentSong () {
   // Stop the current timeout (if any)
   window.clearTimeout(timeout);
 
