@@ -1,7 +1,101 @@
 body {
-  background: #eee;
+    font-family: system-ui, sans-serif;
+    color: #fff;
+    background: #212529;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+    line-height: 1.5;
+}
+
+*::-webkit-input-placeholder {
+    color: #6c757d;
+}
+
+*::-moz-placeholder {
+    color: #6c757d;
+}
+
+*:-ms-input-placeholder {
+    color: #6c757d;
+}
+
+*::placeholder {
+    color: #6c757d;
+}
+
+*, *::before, *::after {
+    border-color: #6c757d;
+}
+
+.container {
+    margin-top: 4rem;
+}
+
+.form-label {
+    color: #6c757d;
+}
+
+.form-control {
+    background-color: #343a40;
+    color: #fff;
+    border: 1px solid #6c757d;
 }
 
 input[type="number"] {
-  width: 5em;
+    width: 5em;
+    background-color: #343a40;
+    color: #fff;
+    border: 1px solid #6c757d;
+}
+
+.btn {
+    background-color: transparent;
+    color: #fff;
+    border-color: #6c757d;
+}
+
+.btn:hover {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.modal-content {
+    background-color: #343a40;
+    color: #fff;
+    border: 1px solid #6c757d;
+}
+
+.modal-title {
+    color: #fff;
+}
+
+.btn-close {
+    color: #fff;
+}
+
+.alert {
+    border-color: #6c757d;
+}
+
+.alert-info {
+    background-color: #17a2b8;
+    color: #fff;
+}
+
+.alert-info:hover {
+    background-color: #138496;
+}
+
+.fade.show {
+    opacity: 1;
 }
