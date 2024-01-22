@@ -81,7 +81,6 @@ checkboxGenreOthers.forEach(e => {
 resetInputs();
 save();
 restart();
-replayCurrentSong();
 document.addEventListener('keydown', keyDownHandler);
 document.addEventListener('keyup', keyUpHandler);
 
@@ -231,3 +230,7 @@ function end (className, text) {
   window.locked = true;
   createAlert('info', 'Restart the game!');
 }
+
+window.addEventListener('load', function() {
+  replayCurrentSong();
+});
