@@ -117,3 +117,30 @@ input[type="number"] {
     background-color: #3e8f14;
     border-color: #3e8f14;
 }
+
+.form-control + .show {
+    position: absolute;
+    margin: 0;
+    transform: translate(0, calc(100% + 0.25rem));
+}
+
+/* Style for the genres-dropdown */
+#genres-dropdown {
+    position: absolute;
+    inset: 0 auto auto 0;
+    margin: 0;
+    transform: translate(0.375rem, 0.5rem);
+    border: 1px solid #6c757d;
+    background-color: #343a40;
+    color: #fff;
+}
+
+#genres-dropdown .form-check-input {
+    background-color: #55b725;
+    border-color: #55b725;
+}
+
+#genres-dropdown .form-check-input:checked {
+    background-color: #3e8f14;
+    border-color: #3e8f14;
+}
