@@ -4,6 +4,33 @@ body {
     background: #212529;
     transition: background-color 0.3s;
     line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    text-align: center;
+}
+
+.Header-Text-P1 {
+    color: #ffffff;
+    font-size: 2em; /* Adjust the font size as needed */
+    margin: 0; /* Remove default margin */
+    display: inline; /* Make sure both headers are inline */
+}
+
+.Header-Text-P2 {
+    color: #c5c5c5;
+    font-size: 2em; /* Adjust the font size as needed */
+    margin: 0; /* Remove default margin */
+    display: inline; /* Make sure both headers are inline */
+}
+
+.Header-Divider {
+    width: 100%; /* Make the divider span the entire width */
+    border: 1px solid #c5c5c5;
+    margin-top: 10px; /* Adjust the space between headers and divider as needed */
 }
 
 *::-webkit-input-placeholder,
